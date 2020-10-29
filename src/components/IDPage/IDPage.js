@@ -1,13 +1,12 @@
 import './IDPage.css';
+import MissionArea from '../MissionArea/MissionArea.js';
+import StoryArea from '../StoryArea/StoryArea.js';
 
 const IDPage = () => {
   return (
     <section>
-      <h2>Your Identity Backstory for ~idname~</h2>
-      <article>~backstory paragraph~</article>
-      <h2>Your Mission Is:</h2>
-      <article>~mission paragraph~</article>
-
+      <StoryArea />
+      <MissionArea />
     </section>
   );
 }
