@@ -1,4 +1,5 @@
 import './IDArea.css';
+import Identity from '../Identity/Identity.js';
 
 const IDArea = () => {
   return (
