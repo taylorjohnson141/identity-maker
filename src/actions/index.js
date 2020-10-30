@@ -1,4 +1,4 @@
-export const addID = (indentity) => ({
+export const addID = (identity) => ({
   type: 'ADD_ID',
   identity
 });
