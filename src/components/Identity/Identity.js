@@ -3,8 +3,8 @@ import './Identity.css';
 const Identity = () => {
   return (
     <section>
-      <img />
-      <h3>Last Name</h3>
+      <img alt = 'spy-pic' />
+      <h3 className ='last-name' >Last Name</h3>
       <h2>xxx</h2>
       <h3>First Name</h3>
       <h2>xxx</h2>
