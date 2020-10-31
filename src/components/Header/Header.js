@@ -2,7 +2,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <section>
+    <section className='header-section'>
       <h1>Welcome, Agent</h1>
     </section>
   );
