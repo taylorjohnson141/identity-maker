@@ -5,8 +5,13 @@ import { useEffect } from 'react';
 import Identity from '../Identity/Identity';
 import { useSelector } from 'react-redux';
 
-const IDPage = () => {
-  
+const IDPage = (props) => {
+  const {idNumber} = props
+  useEffect(idNumber => {
+    let currentIdentity= useSelector(state => state.identities.find(identity => identity.id === idNumber ))
+    let currentCountry = useSelector(state => state.countries.find(county => county.name === currentIdentity.county))
+
+  },[idNumber])
   return (
     <section>
       <h2>Name's Identity</h2>
