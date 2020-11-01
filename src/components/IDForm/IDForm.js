@@ -16,7 +16,6 @@ const IDForm = () => {
   const { handleSubmit, register, errors, reset } = useForm();
 
   const onSubmit = values => {
-    console.log(values)
     dispatch(addID(values))
     reset()
   }
