@@ -16,6 +16,7 @@ const IDForm = () => {
   const { handleSubmit, register, errors, reset } = useForm();
 
   const onSubmit = values => {
+    console.log(values)
     dispatch(addID(values))
     reset()
   }
@@ -25,13 +26,13 @@ const IDForm = () => {
     return <h1>Loading</h1>
   } else {
     countryList = countries.map((country, index) => {
-      return <option value={country.name} key={index} />
+      return <option value={country.name} key={index} name={country.name} />
     })
   }
 
   return (
 
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form name='identity' onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="" className="">
       Enter Three First Names
       </label>
@@ -194,15 +195,16 @@ const IDForm = () => {
         })}
       />
 
-      <label htmlFor="" className="">
+      <label htmlFor="" className="country-selection">
       Enter A Name Of A Country
       </label>
-      <input name="country" list="data" />
+      <input name="country" list="data"
+        ref={register({
+        required: "Required",
+     })}/>
       <datalist
        id="data"
-       ref={register({
-        required: "Required",
-      })}
+       name="country"
       >
         {countryList}
       </datalist>
