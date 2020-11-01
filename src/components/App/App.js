@@ -8,12 +8,17 @@ import { Route } from 'react-router-dom';
 const App = () => {
   return (
     <main>
-      <Header />
-      <IDForm />
-      <IDArea />
-      <Route path='/id-page'>
-        <IDPage />
+    <Route>
+      <Route exact path='/'>
+        <Header />
+        <IDForm />
+        <IDArea />
       </Route>
+      <Route path ='/:id' render = {({match}) =>{
+        const {id} = match.params
+       return <IDPage identity ={id}/>
+      }}/>
+    </Route>
     </main>
   );
 }

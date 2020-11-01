@@ -1,15 +1,17 @@
 import './Identity.css';
 import {Link} from 'react-router-dom'
 const Identity = (prop) => {
-  let {id} = prop
+  console.log(prop)
+  let identities = prop.identities
+  console.log(identities)
   return (
-    <Link>
-      <section id = {id.id}>
+    <Link to = {`/${String(identities.id)}`}>
+      <section >
         <img alt = 'spy-pic' />
         <h3 className ='last-name' >Last Name</h3>
-        <h2>{id['last-name']}</h2>
+        <h2>{identities['last-name']}</h2>
         <h3>First Name</h3>
-        <h2>{id['first-name1']}</h2>
+        <h2>{identities['first-name1']}</h2>
       </section>
     </Link>
   );

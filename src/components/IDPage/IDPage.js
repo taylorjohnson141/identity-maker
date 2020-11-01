@@ -1,8 +1,12 @@
 import './IDPage.css';
 import MissionArea from '../MissionArea/MissionArea.js';
 import StoryArea from '../StoryArea/StoryArea.js';
+import { useEffect } from 'react';
+import Identity from '../Identity/Identity';
+import { useSelector } from 'react-redux';
 
 const IDPage = () => {
+  
   return (
     <section>
       <h2>Name's Identity</h2>
