@@ -4,3 +4,4 @@ function AddIDReducer (state = [],action){
   }
   return state
 }
+export default AddIDReducer
