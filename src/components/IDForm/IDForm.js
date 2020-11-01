@@ -1,21 +1,37 @@
 import './IDForm.css';
-
+import { useForm } from "react-hook-form";
 
 const IDForm = () => {
+  const { handleSubmit, register, errors } = useForm();
+  const onSubmit = values => console.log(values);
+
   return (
-    <form>
-      <label for='first-name'>first name</label>
-      <input name='first-name' placeholder='first name'/>
-      <label for='first-name'>last name</label>
-      <input name='last-name' placeholder='last name'/>
-      <label for='country'>target country</label>
-      <input list='countries' name='country' id='countries'/>
-      <datalist id='countries'>
-        
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        name="first-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <input
+        name="last-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+      <input name="country "type="text" list="data" />
+      <datalist 
+       ref={register({
+        required: "Required",
+      })}
+      >
+  
       </datalist>
-      <input type='submit'/>
+
+      <button type="submit">Submit</button>
     </form>
-  );
+  )
 }
 
 export default IDForm;
