@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-//imoprt { reducers } here
+imoprt { isLoading, hasErrored, countries } from './setCountriesReducer'
 
 const rootReducer = combineReducers({
-  //add reducer variables here
+  countries,
+  isLoading,
+  error: hasErrored
 });
 
 
