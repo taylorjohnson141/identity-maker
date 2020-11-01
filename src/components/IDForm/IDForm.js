@@ -1,13 +1,19 @@
 import './IDForm.css';
 import {useEffect} from 'react'
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
+import {addID} from '../../actions/index'
 import {useDispatch,useSelector} from 'react-redux'
 
 const IDForm = () => {
+  useEffect(() => {
+    //makeApi call
+    //updateState
+  });
 
   const { handleSubmit, register, errors } = useForm();
+  let dispatch = useDispatch()
   const onSubmit = values => {
-    //Will add to state here
+    dispatch(addID(values))
   }
 
 
@@ -32,7 +38,7 @@ const IDForm = () => {
         required: "Required",
       })}
       >
-        {/* Will add state here */}
+        {/* Will add countries state here */}
       </datalist>
 
       <button type="submit">Submit</button>
@@ -42,4 +48,3 @@ const IDForm = () => {
 
 export default IDForm;
 
-//<option value='Bhutan'>
