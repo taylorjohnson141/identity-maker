@@ -109,6 +109,88 @@ const IDForm = () => {
         })}
       />
 
+      <label htmlFor="" className="">
+      Enter Two Numbers Between 1 And 10
+      </label>
+      <input
+        name="numbers1"
+        ref={register({
+          required: "Required",
+        })}
+      />
+      <input
+        name="numbers2"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter A Sport
+      </label>
+      <input
+        name="sport-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter A Game
+      </label>
+      <input
+        name="game-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter Two Genres
+      </label>
+      <input
+        name="genre1"
+        ref={register({
+          required: "Required",
+        })}
+      />
+      <input
+        name="genre2"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter A Color
+      </label>
+      <input
+        name="color-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter An Animal You'd See In A Zoo
+      </label>
+      <input
+        name="zoo-animal"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
+      <label htmlFor="" className="">
+      Enter A Name Of A Country
+      </label>
+      <input
+        name="country-name"
+        ref={register({
+          required: "Required",
+        })}
+      />
+
       <input name="country "type="text" list="data" />
       <datalist
        ref={register({
