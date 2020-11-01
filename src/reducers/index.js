@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-//imoprt { reducers } here
+import { isLoading, hasErrored, countries } from './setCountriesReducer';
+import { addID } from './addIDReducer';
 
 const rootReducer = combineReducers({
-  //add reducer variables here
+  countries,
+  identities: addID,
+  isLoading,
+  error: hasErrored
 });
 
 
