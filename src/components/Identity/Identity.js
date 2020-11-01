@@ -1,18 +1,17 @@
 import './Identity.css';
-
-const Identity = () => {
+import {Link} from 'react-router-dom'
+const Identity = (prop) => {
+  let {id} = prop
   return (
-    <section>
-      <img alt = 'spy-pic' />
-      <h3 className ='last-name' >Last Name</h3>
-      <h2>xxx</h2>
-      <h3>First Name</h3>
-      <h2>xxx</h2>
-      <h3>Date of Birth</h3>
-      <h2>xxx</h2>
-      <h3>Place of Birth</h3>
-      <h2>xxx</h2>
-    </section>
+    <Link>
+      <section id = {id.id}>
+        <img alt = 'spy-pic' />
+        <h3 className ='last-name' >Last Name</h3>
+        <h2>{id['last-name']}</h2>
+        <h3>First Name</h3>
+        <h2>{id['first-name1']}</h2>
+      </section>
+    </Link>
   );
 }
 
