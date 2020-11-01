@@ -1,5 +1,6 @@
 export const addID = (identity) => ({
   type: 'ADD_ID',
+  id: Date.now(),
   identity
 });
 

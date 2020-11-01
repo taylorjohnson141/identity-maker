@@ -120,12 +120,18 @@ const IDForm = () => {
       </label>
       <input
         name="numbers1"
+        type='number'
+        min='1'
+        max='10'
         ref={register({
           required: "Required",
         })}
       />
       <input
         name="numbers2"
+        type='number'
+        min='1'
+        max='10'
         ref={register({
           required: "Required",
         })}

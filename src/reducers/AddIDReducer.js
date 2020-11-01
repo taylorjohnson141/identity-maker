@@ -1,7 +1,6 @@
-function AddIDReducer (state = [],action){
+export const addID = (state = [], action) => {
   if(action.type === 'ADD_ID'){
-    return [...state, ...action.identity ]
+    return [...state, {id: action.id, ...action.identity}]
   }
   return state
 }
-export default AddIDReducer
