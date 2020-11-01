@@ -2,8 +2,12 @@ import './IDForm.css';
 import { useForm } from "react-hook-form";
 
 const IDForm = () => {
+  //will create country state here
   const { handleSubmit, register, errors } = useForm();
-  const onSubmit = values => console.log(values);
+  const onSubmit = values => {
+    //Will add to state here
+  }
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -26,7 +30,7 @@ const IDForm = () => {
         required: "Required",
       })}
       >
-  
+        {/* Will add state here */}
       </datalist>
 
       <button type="submit">Submit</button>
