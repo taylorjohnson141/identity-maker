@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-imoprt { isLoading, hasErrored, countries } from './setCountriesReducer'
+import { isLoading, hasErrored, countries } from './setCountriesReducer'
 
 const rootReducer = combineReducers({
   countries,

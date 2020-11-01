@@ -3,25 +3,31 @@ import {useEffect} from 'react'
 import { useForm } from 'react-hook-form';
 import {addID} from '../../actions/index'
 import {useDispatch,useSelector} from 'react-redux'
+import { fetchCountries } from '../../thunks/fetchCountries'
 
 const IDForm = () => {
+  const countries = useSelector(state => state.countries)
+  let dispatch = useDispatch()
   useEffect(() => {
-    //makeApi call
-    //updateState
-  });
+    const url = 'https://restcountries.eu/rest/v2/all'
+    dispatch(fetchCountries(url))
+  }, [dispatch]);
 
   const { handleSubmit, register, errors } = useForm();
-  let dispatch = useDispatch()
+
   const onSubmit = values => {
     dispatch(addID(values))
   }
-  const countries = useSelector(state => state.countries)
+  let countryList
 
+  if(!countries || countries.length === 0){
+    return <h1>Loading</h1>
+  } else {
+    countryList = countries.map((country, index) => {
+      return <option value={country.name} key={index} />
+    })
+  }
 
-
-  // if(!countries){
-  //   return <h1>Loading</h1>
-  // }
   return (
 
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -184,20 +190,14 @@ const IDForm = () => {
       <label htmlFor="" className="">
       Enter A Name Of A Country
       </label>
-      <input
-        name="country-name"
-        ref={register({
-          required: "Required",
-        })}
-      />
-
-      <input name="country "type="text" list="data" />
+      <input name="country" list="data" />
       <datalist
+       id="data"
        ref={register({
         required: "Required",
       })}
       >
-        {/* Will add countries state here */}
+        {countryList}
       </datalist>
 
       <button type="submit">Submit</button>
