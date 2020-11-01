@@ -1,7 +1,7 @@
 import './IDForm.css';
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
-import {addID} from '../../actions/index'
+import { addID } from '../../actions/index'
 import {useDispatch,useSelector} from 'react-redux'
 import { fetchCountries } from '../../thunks/fetchCountries'
 
@@ -13,10 +13,11 @@ const IDForm = () => {
     dispatch(fetchCountries(url))
   }, [dispatch]);
 
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, errors, reset } = useForm();
 
   const onSubmit = values => {
     dispatch(addID(values))
+    reset()
   }
   let countryList
 
