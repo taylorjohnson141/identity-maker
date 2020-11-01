@@ -15,9 +15,15 @@ const IDForm = () => {
   const onSubmit = values => {
     dispatch(addID(values))
   }
+  const countries = useSelector(state => state.countries)
 
 
+  
+  // if(!countries){
+  //   return <h1>Loading</h1>
+  // }
   return (
+    
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
         name="first-name"
