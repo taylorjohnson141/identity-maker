@@ -5,7 +5,10 @@ import StoryArea from '../StoryArea/StoryArea.js';
 const IDPage = () => {
   return (
     <section>
+      <h2>Name's Identity</h2>
+      <h3>Your Backstory</h3>
       <StoryArea />
+      <h3>Your Mission</h3>
       <MissionArea />
     </section>
   );
@@ -13,3 +16,10 @@ const IDPage = () => {
 
 export default IDPage;
 //will use useSelector hook for connecting state.
+// use Identity Card name to interpolate the header---'name''s identity
+//action type = GRAB_IDENTITY
+//action payload ?
+//will need access to IDReducer to get name
+// OR
+//reducer case GRAB_IDENTITY:
+// reducer return [identity card with matching id]
