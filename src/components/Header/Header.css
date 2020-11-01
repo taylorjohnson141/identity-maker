@@ -1,0 +1,26 @@
+
+.background {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+  background: url(https://image.freepik.com/free-photo/overhead-shot-comfortable-workplace-with-notebook-white-desk-background_67155-3392.jpg) no-repeat;
+  background-size: cover;
+  margin-bottom: 1rem;
+}
+
+img[alt~='spy-icon'] {
+  width: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: .75rem;
+  margin-top: .5rem;
+  align-self: center;
+}
+
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+  align-self: center;
+  margin-left: 7rem;
+}
