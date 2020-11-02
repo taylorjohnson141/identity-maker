@@ -17,7 +17,6 @@ const MissionArea = (props) => {
 
   return (
     <article>
-      <h1>Your Mission</h1>
       <h3>Operation:{currentCountry.nativeName}</h3>
       {`You will travel to ${currentCountry.subregion} 
       and imbed yourself in ${currentCountry.name},
