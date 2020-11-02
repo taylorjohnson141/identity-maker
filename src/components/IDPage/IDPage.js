@@ -17,9 +17,7 @@ const IDPage = (props) => {
 
   return (
     <section>
-      <h3>Your Backstory</h3>
       <StoryArea currentIdentity = {currentIdentity}  currentCountry ={currentCountry}/>
-      <h3>Your Mission</h3>
       <MissionArea currentCountry ={currentCountry}/>
     </section>
   );
