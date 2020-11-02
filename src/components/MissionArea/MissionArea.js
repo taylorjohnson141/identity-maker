@@ -2,6 +2,7 @@ import './MissionArea.css';
 
 const MissionArea = (props) => {
   let {currentCountry} = props
+  console.log(currentCountry)
   let takeOver;
   let languages;
   if(!currentCountry.regionalBlocs[0]){
@@ -17,7 +18,7 @@ const MissionArea = (props) => {
 
   return (
     <article>
-      <h3>Operation:{currentCountry.nativeName}</h3>
+      <h1>Operation:{currentCountry.nativeName}</h1>
       {`You will travel to ${currentCountry.subregion} 
       and imbed yourself in ${currentCountry.name},
        a nation of ${currentCountry.population} people. 
