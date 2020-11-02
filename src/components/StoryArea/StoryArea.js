@@ -1,27 +1,22 @@
 import './StoryArea.css';
 
 const StoryArea = (props) => {
-  let {currentCountry} = props
+  let {currentIdentity} = props
+  console.log(currentIdentity)
   return (
     <article>
-      Your name is 
-      {first name 1} 
-      {last name}. 
-      You live in 
-      {country capital}, 
-      {country}. 
-      You work for {company name} as a/an {occupation}. 
-      You have {number} children and your spouse’s name is {
-      first name 2}. The two of you met at {restaurant}. 
-      You have a {pet 1} and two {pet 2 (plural)}  
+      {`Your name is 
+      ${currentIdentity['first-name1']} 
+      ${currentIdentity['last-name']}. 
+      You work for ${currentIdentity['company-name']} as a/an ${currentIdentity['occupation-name']}. 
+      You have ${currentIdentity.numbers1} children and your spouse’s name is ${
+        currentIdentity['first-name2']}. The two of you met at ${currentIdentity['restaurant-name']}. 
+      You have a ${currentIdentity['singular-animal-name']} and two ${currentIdentity['plural-animal-name']}  
       In your free time, you like to coach a youth 
-      {sport} team and play {game} on weekends with your social club. 
-      You enjoy {genre 1} novels and watching {genre 2} movies. 
-      You have {number} close friends who often call you by your nickname, 
-      the {color} {zoo animal}.
-
-      <h2>Your Backstory for Identity: xxx</h2>
-      <p>~a bunch of stuff~</p>
+      ${currentIdentity['sport-name']} team and play ${currentIdentity['game-name']} on weekends with your social club. 
+      You enjoy ${currentIdentity.genre1} novels and watching ${currentIdentity.genre2} movies. 
+      You have ${currentIdentity.numbers2} close friends who often call you by your nickname, 
+      the ${currentIdentity['color-name']} ${currentIdentity['zoo-animal']}`}.
     </article>
   );
 }
