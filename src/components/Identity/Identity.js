@@ -1,9 +1,7 @@
 import './Identity.css';
 import {Link} from 'react-router-dom'
 const Identity = (prop) => {
-  console.log(prop)
   let identities = prop.identities
-  console.log(identities)
   return (
     <Link to = {`/${String(identities.id)}`}>
       <section >
