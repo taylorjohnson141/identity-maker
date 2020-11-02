@@ -7,11 +7,9 @@ import { useSelector } from 'react-redux';
 const IDPage = (props) => {
   const {idNumber} = props
   let currentIdentity = useSelector(state => state.identities.find(identity => {
-    console.log(identity.id)
-    return identity.id === parseInt(idNumber)} ))
+    return identity.id === parseInt(idNumber)}))
   let currentCountry = useSelector(state => state.countries.find(country => country.name === currentIdentity.country))
  if(!currentCountry){
-   console.log(currentIdentity)
    return <h1>Loading!</h1>
  }
 
