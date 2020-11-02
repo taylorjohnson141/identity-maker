@@ -25,8 +25,7 @@ const MissionArea = (props) => {
        The currency you will require is the ${currentCountry.currencies[0].name} and an amount of ${currentCountry.currencies[0].symbol}
        10,000 will be transferred to your account. You will need to learn ${languages}
        flawlessly in order to blend in with the locals. You will be tasked with infiltrating high level diplomatic offices and 
-       reporting back as much info on there dealings with other nations of ${takeOver}. 
-       If your cover is blown… good luck.`}
+       reporting back as much info on there dealings with other nations of ${takeOver}. If your cover is blown… good luck.`}
        <img src={currentCountry.flag} alt = 'country flag'/>
     </article>
     
