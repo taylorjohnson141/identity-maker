@@ -2,7 +2,6 @@ import './StoryArea.css';
 
 const StoryArea = (props) => {
   let {currentIdentity} = props
-  console.log(currentIdentity)
   return (
     <article>
       {`Your name is 
