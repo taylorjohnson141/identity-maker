@@ -1,15 +1,26 @@
 import './IDPage.css';
 import MissionArea from '../MissionArea/MissionArea.js';
 import StoryArea from '../StoryArea/StoryArea.js';
+import Identity from '../Identity/Identity';
+import { useSelector } from 'react-redux';
 
-const IDPage = () => {
+const IDPage = (props) => {
+  const {idNumber} = props
+  let currentIdentity = useSelector(state => state.identities.find(identity => {
+    console.log(identity.id)
+    return identity.id === parseInt(idNumber)} ))
+  let currentCountry = useSelector(state => state.countries.find(country => country.name === currentIdentity.country))
+ if(!currentCountry){
+   console.log(currentIdentity)
+   return <h1>Loading!</h1>
+ }
+
   return (
     <section>
-      <h2>Name's Identity</h2>
       <h3>Your Backstory</h3>
-      <StoryArea />
+      <StoryArea currentIdentity = {currentIdentity}  currentCountry ={currentCountry}/>
       <h3>Your Mission</h3>
-      <MissionArea />
+      <MissionArea currentCountry ={currentCountry}/>
     </section>
   );
 }
