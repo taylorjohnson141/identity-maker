@@ -4,15 +4,20 @@ describe('countries',() =>{
   let dummyAction = {
     type:'Dummy-Action'
   }
-it('should return an empty array if action.type !==SET_COUNTRIES',() =>{
-  expect(countries(undefined,dummyAction)).toHaveLength(0)
+  let goodAction = {
+    type:'SET_COUNTRIES',
+    countries : [
+      {
+        country:'I am a country'
+      }
+    ]
+  }
+  it('should return an empty array if action.type !== SET_COUNTRIES',() =>{
+    expect(countries(undefined,dummyAction)).toHaveLength(0)
+  })
+  it('should return an array with country objects if type === SET_COUNTRIES',() =>{
+    expect(countries(undefined,goodAction)).toStrictEqual([
+      {country:'I am a country'}
+    ])
+  })
 })
-})
-// export const countries = (state = [], action) => {
-//   switch(action.type) {
-//     case 'SET_COUNTRIES':
-//       return action.countries
-//     default:
-//       return state
-//   }
-// }
