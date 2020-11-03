@@ -10,15 +10,15 @@ const Identity = (prop) => {
       <section className='identity'>
         <img alt = 'spy-pic' src={Silhouette} />
         <div className='last'>
-          <h3 className ='last-name' >Last Name</h3>
+          <h3 className ='last-name' >LAST NAME</h3>
           <h2>{identities['last-name']}</h2>
         </div>
         <div className='first'>
-          <h3 className='first-name'>First Name</h3>
+          <h3 className='first-name'>FIRST NAME</h3>
           <h2>{identities['first-name1']}</h2>
         </div>
         <div className='country'>
-          <h3 className='country-origin'>Country of Origin</h3>
+          <h3 className='country-origin'>COUNTRY OF ORIGIN</h3>
           <h2>{identities['country']}</h2>
         </div>
       </section>

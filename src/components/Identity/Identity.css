@@ -1,26 +1,35 @@
 .identity {
-  width: 50px;
-  text-decoration: inherit;
   background-color: rgb(78, 78, 78);
   color: rgb(0, 255, 65);
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
+.identity h3 {
+  font-size: 1em;
+}
+
+.identity h2 {
+  font-size: 1.4em;
+}
 
 .identity img {
   grid-area: 2 / 1 / 3/ 2;
-  height: auto;
+  margin: 7px;
+  border-radius: 8px;
 }
 
 .last {
   grid-area: 1 / 2 / 2 / 3;
+  margin-left: 5px;
 }
 
 .first {
   grid-area: 2 / 2 / 3 / 3;
+  margin-left: 5px;
 }
 
 .country {
   grid-area: 3 / 2 / 4 / 3;
+  margin-left: 5px;
 }
