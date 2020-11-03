@@ -1,5 +1,6 @@
 import {isLoading} from './setCountriesReducer'
 import expect from 'expect'
+
 describe('isLoading',() =>{
   let dummyAction = {
     type:'dummy-Action'

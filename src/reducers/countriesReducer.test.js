@@ -1,6 +1,7 @@
 import {countries} from './setCountriesReducer'
 import expect from 'expect'
-describe('countries',() =>{
+
+describe('countries', () =>{
   let dummyAction = {
     type:'Dummy-Action'
   }
