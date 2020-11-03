@@ -1,5 +1,5 @@
 import React from 'react'
-import './IDArea.module.css';
+import './IDArea.css';
 import Identity from '../Identity/Identity.js';
 import {useSelector} from 'react-redux';
 
