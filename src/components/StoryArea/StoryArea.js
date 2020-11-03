@@ -4,6 +4,7 @@ const StoryArea = (props) => {
   let {currentIdentity} = props
   return (
     <article>
+      <h1>Your Backstory</h1>
       {`Your name is 
       ${currentIdentity['first-name1']} 
       ${currentIdentity['last-name']}. 
