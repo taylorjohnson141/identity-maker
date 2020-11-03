@@ -1,10 +1,17 @@
 import "@testing-library/jest-dom";
 import { fetchCountries } from './fetchCountries'
-jest.mock('./fetchCountries')
+import { isLoading, hasErrored, setCountries } from '../actions/index.js'
+
 
 describe('fetchCountries', () => {
+  let mockUrl
+  let mockCountries
+  let mockDispatch
+
   beforeEach(() => {
-    const fetchValue = fetchCountries.mockResolvedValue({"name": "Mexico",
+    mockUrl = 'www.url.com'
+    mockDispatch = jest.fn()
+    mockCountries = {"name": "Mexico",
           "topLevelDomain": [
               ".mx"
           ],
@@ -89,29 +96,36 @@ describe('fetchCountries', () => {
                   ]
               }
           ],
-          "cioc": "MEX"})
+          "cioc": "MEX"}
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({
+        countries: mockCountries
+      })
+    }))
   })
 
-  it('dispatches isLoading', async () => {
-    const isLoading = jest.fn()
-    const dispatch = jest.fn()
-    const fetchCountries = jest.fn()
-    await fetchCountries('url')(dispatch)
+  it('calls dispatch with isLoading(true)', async () => {
+    const thunk = fetchCountries(mockUrl)
 
-    expect(dispatch).toHaveBeenCalledWith(isLoading())
+    thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true))
+  })
+
+  it('calls fetch with the correct param', () => {
+    const thunk = fetchCountries(mockUrl)
+
+    thunk(mockDispatch)
+
+    expect(window.fetch).toHaveBeenCalledWith(mockUrl)
   })
 
   it('should dispatch setCountries when the fetch is successful', async () => {
-    const setCountries= jest.fn()
-    const dispatch = jest.fn()
-    const fetchCountries = jest.fn()
-    await fetchCountries('url')(dispatch)
 
-    expect(dispatch).toHaveBeenCalledWith(setCountries(fetchValue))
   })
 
   it('dispatches error when the fetch fails', () => {
-    const error = new Error('FAIL')
-    fetchCountries.mockResolvedValue(error)
+
   })
 })
