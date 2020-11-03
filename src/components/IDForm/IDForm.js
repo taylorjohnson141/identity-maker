@@ -1,4 +1,4 @@
-import './IDForm.module.css';
+import './IDForm.css';
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { addID } from '../../actions/index'
@@ -31,7 +31,7 @@ const IDForm = () => {
 
   return (
 
-    <form classname='id-form' name='identity' onSubmit={handleSubmit(onSubmit)}>
+    <form className='id-form' name='identity' onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="" className="">
       Enter Three First Names
       </label>

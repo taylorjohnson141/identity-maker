@@ -1,4 +1,4 @@
-import './Header.module.css';
+import './Header.css';
 import SpyIcon from '../../Images/spyIcon.png';
 
 const Header = () => {
