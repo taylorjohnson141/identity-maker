@@ -20,16 +20,16 @@ describe('actions', () => {
       singularAnimal: 'moose',
       sport: 'rugby',
       zooAnimal: 'lemur'
-    }
+    };
 
     const expectedAction = {
       type: 'ADD_ID',
       id: Date.now(),
       identity: identity
-    }
+    };
 
     const result = actions.addID(identity);
 
     expect(result).toEqual(expectedAction);
-  })
-})
+  });
+});

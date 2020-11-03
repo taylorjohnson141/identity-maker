@@ -12,6 +12,5 @@ describe('actions', () => {
     const result = actions.isLoading(boolean);
 
     expect(result).toEqual(expectedAction)
-  })
-
-})
+  });
+});
