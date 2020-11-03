@@ -1,4 +1,4 @@
-import './App.css';
+import './App.module.css';
 import Header from '../Header/Header.js';
 import IDForm from '../IDForm/IDForm.js';
 import IDPage from '../IDPage/IDPage.js';
@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <main>
+    <main classname='main-section'>
     <Route>
       <Route exact path='/'>
         <Header />
