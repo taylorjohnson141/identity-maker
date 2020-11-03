@@ -1,4 +1,5 @@
-import './StoryArea.module.css';
+import React from 'react';
+import './StoryArea.css';
 
 const StoryArea = (props) => {
   let {currentIdentity} = props

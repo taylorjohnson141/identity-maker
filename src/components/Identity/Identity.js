@@ -1,4 +1,5 @@
-import './Identity.module.css';
+import React from 'react';
+import './Identity.css';
 import {Link} from 'react-router-dom'
 const Identity = (prop) => {
   let identities = prop.identities

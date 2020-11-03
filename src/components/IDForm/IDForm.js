@@ -133,6 +133,7 @@ const IDForm = () => {
         Enter Two Numbers Between 1 And 10
         </label>
         <input
+          className='numbers'
           name="numbers1"
           type='number'
           min='1'
@@ -142,6 +143,7 @@ const IDForm = () => {
           })}
         />
         <input
+          className='numbers'
           name="numbers2"
           type='number'
           min='1'

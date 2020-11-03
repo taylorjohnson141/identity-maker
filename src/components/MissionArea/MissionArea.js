@@ -1,4 +1,5 @@
-import './MissionArea.module.css';
+import React from 'react';
+import './MissionArea.css';
 
 const MissionArea = (props) => {
   let {currentCountry} = props

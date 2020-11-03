@@ -1,4 +1,4 @@
-import './IDPage.module.css';
+import './IDPage.css';
 import MissionArea from '../MissionArea/MissionArea.js';
 import StoryArea from '../StoryArea/StoryArea.js';
 import Identity from '../Identity/Identity';

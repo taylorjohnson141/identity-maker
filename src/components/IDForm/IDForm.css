@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(78, 78, 78);
-  height: 120%;
+  height: inherit;
   width: 260px;
   margin-top: 120px;
   position: fixed;
@@ -16,10 +16,14 @@
   box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.form-part{
+.id-form div {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 3px;
+}
+
+.numbers {
+  width: 25px;
 }
