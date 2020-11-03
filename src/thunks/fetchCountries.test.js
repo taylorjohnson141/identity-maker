@@ -105,7 +105,7 @@ describe('fetchCountries', () => {
     }))
   })
 
-  it('calls dispatch with isLoading(true)', async () => {
+  it('calls dispatch with isLoading(true)', () => {
     const thunk = fetchCountries(mockUrl)
 
     thunk(mockDispatch)
@@ -121,11 +121,24 @@ describe('fetchCountries', () => {
     expect(window.fetch).toHaveBeenCalledWith(mockUrl)
   })
 
-  it('should dispatch setCountries when the fetch is successful', async () => {
+  it('should dispatch hasErrored with a message if the response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'Something went wrong'
+    }))
 
+    const thunk = fetchCountries(mockUrl)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Something went wrong'))
   })
 
-  it('dispatches error when the fetch fails', () => {
+  it('should dispatch isLoading(false) if the response is ok', async () => {
+    const thunk = fetchCountries(mockUrl)
 
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
   })
 })

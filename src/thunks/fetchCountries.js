@@ -9,6 +9,7 @@ export const fetchCountries = (url) => {
         throw Error(response.statusText)
       }
       const data = await response.json()
+      dispatch(isLoading(false))
       dispatch(setCountries(data))
     } catch (error) {
       dispatch(hasErrored(error.message))
