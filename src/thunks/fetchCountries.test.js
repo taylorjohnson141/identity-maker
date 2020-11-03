@@ -141,4 +141,14 @@ describe('fetchCountries', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
   })
+
+  it('should dispatch setCountries with the correct params', async () => {
+    const thunk = fetchCountries(mockUrl)
+
+    mockDispatch = jest.fn().mockImplementation(() => mockCountries)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(setCountries(mockCountries))
+  })
 })
