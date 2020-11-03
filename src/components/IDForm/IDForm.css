@@ -2,17 +2,18 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(78, 78, 78);
-  height: inherit;
+  height: 100%;
   width: 260px;
   margin-top: 120px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow-x: scroll;
   padding-top: 20px;
   color: rgb(0, 255, 65);
   font-family: 'VT323', monospace;
+  font-size: 1.5em;
   box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -21,7 +22,7 @@
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 8px;
 }
 
 .numbers {

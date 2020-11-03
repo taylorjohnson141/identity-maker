@@ -15,11 +15,10 @@ const IDArea = () => {
     />
   })
   if(createdIdentities.length === 0){
-    return <h1>Make an ID</h1>
+    return <section className='id-area'><h1>Make an ID</h1></section>
   }
   return (
     <section className='id-area'>
-      <h2>Your Identities</h2>
      {createdIdentities}
     </section>
   );
