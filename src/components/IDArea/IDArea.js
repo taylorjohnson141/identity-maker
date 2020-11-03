@@ -18,7 +18,8 @@ const IDArea = () => {
     return <h1>Make an ID</h1>
   }
   return (
-    <section>
+    <section className='id-area'>
+      <h2>Your Identities</h2>
      {createdIdentities}
     </section>
   );

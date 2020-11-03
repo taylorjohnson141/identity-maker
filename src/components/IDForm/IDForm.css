@@ -1,12 +1,25 @@
 .id-form {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(78, 78, 78);
-  height: 100%;
-  width: 200px;
+  height: 120%;
+  width: 260px;
+  margin-top: 120px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
   padding-top: 20px;
-  color: rgb(0, 255, 65)
+  color: rgb(0, 255, 65);
+  font-family: 'VT323', monospace;
+  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-part{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
