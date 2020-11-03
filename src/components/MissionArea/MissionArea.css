@@ -1,4 +1,11 @@
-img{
-  display:block;
-  height:100px ;
+.article{
+  font-family: 'Orbitron', sans-serif;
+  color:#41FF00;
+  background-color: black;
+  margin-top: 10px;
+}
+.flag-image{
+  display: block;
+  width:100px ;
+  padding-top: 20px;
 }

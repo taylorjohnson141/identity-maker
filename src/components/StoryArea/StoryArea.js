@@ -3,7 +3,7 @@ import './StoryArea.css';
 const StoryArea = (props) => {
   let {currentIdentity} = props
   return (
-    <article>
+    <article className = 'storyArticle'>
       <h1>Your Backstory</h1>
       {`Your name is 
       ${currentIdentity['first-name1']} 
