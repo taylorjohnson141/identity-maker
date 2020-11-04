@@ -9,7 +9,7 @@ const IDPage = (props) => {
   let currentIdentity = useSelector(state => state.identities.find(identity => {
     return identity.id === parseInt(idNumber)}))
   let currentCountry = useSelector(state => state.countries.find(country => country.name === currentIdentity.country))
- if(!currentCountry){
+ if(!currentCountry && !currentIdentity){
    return <h1>Loading!</h1>
  }
 
