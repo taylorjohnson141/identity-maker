@@ -8,24 +8,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import rootReducer from '../../reducers/index.js'
-import { shallow } from 'enzyme';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import { shallow } from 'enzyme';
+// import Enzyme from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
 
-describe('IDPage', () => {
-  it('should render a storyArea component', () => {
-    const store = createStore(rootReducer)
-    const mockIdentityNumber = '2'
-    Enzyme.configure({ adapter: new Adapter() })
-    const wrapper = shallow(
-      <Provider store={store}>
-        <BrowserRouter>
-          <IDPage id={mockIdentityNumber}/>
-        </BrowserRouter>
-      </Provider>
-    )
-
-    const currentIdentity = {
+describe.only('IDPage', () => {
+  beforeEach(() => {
+    const mockIdentity = {
      color: 'red',
      company: 'Bic',
      country: 'Belguim',
@@ -44,9 +33,37 @@ describe('IDPage', () => {
      sport: 'rugby',
      zooAnimal: 'lemur'
    };
+  })
+
+  it('should render loading when there are no countries', () => {
+    const store = createStore(rootReducer);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <IDPage idNumber='1'/>
+        </BrowserRouter>
+      </Provider>
+    )
+
+    const loading = screen.getByText('Loading!')
+    expect(loading).toBeInTheDocument()
+  });
+
+  it('should pass the right props to the StoryArea', () => {
+    const store = createStore(rootReducer)
+    const mockIdentityNumber = '2'
+
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <IDPage idNumber={mockIdentityNumber}/>
+        </BrowserRouter>
+      </Provider>
+    )
+
     const currentCountry = 'Madagascar'
-    console.log(wrapper.props())
-    expect(wrapper.props().id).toEqual("2")
+    console.log(props())
+    expect(props()).toEqual("2")
   });
 
     // check if IDPage component receives correct props
