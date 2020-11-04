@@ -1,13 +1,15 @@
 .identity {
+  padding: 4px;
   text-decoration: inherit;
-  background-color: rgb(78, 78, 78);
   color: rgb(0, 255, 65);
+  background-color: rgb(78, 78, 78);
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
 .identity h3 {
   font-size: 1em;
+  color: white;
 }
 
 .identity h2 {
