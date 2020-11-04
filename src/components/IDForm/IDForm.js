@@ -229,6 +229,7 @@ const IDForm = () => {
           required: "Required",
        })}/>
         <datalist
+         data-testid='list-countries'
          id="data"
          name="country"
         >

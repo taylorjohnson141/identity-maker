@@ -1,14 +1,38 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import IDForm from './IDForm.js';
-import { render, screen } from '@testing-library/react';
-
-
+import { render, screen, waitFor } from '@testing-library/react';
+import rootReducer from '../../reducers/index';
+import {useDispatch, useSelector} from 'react-redux'
+import thunk from 'redux-thunk';
+import { Provider,} from 'react-redux';
+import { createStore, applyMiddleware,combineReducers } from 'redux';
+import userEvent from '@testing-library/user-event'
 describe('IDForm', () => {
-  it('should render an ID form', () => {
-    render (<IDForm />);
-    expect(screen.getByText('first name')).toBeInTheDocument();
-    expect(screen.getByText('last name')).toBeInTheDocument();
-    expect(screen.getByText('target country')).toBeInTheDocument();
-  })
-})
+  it('should render loading on first render', () => {
+    const store = createStore(rootReducer, (applyMiddleware(thunk)))
+    render (<Provider store ={store}><IDForm /></Provider>);
+    expect(screen.getByText('Loading')).toBeInTheDocument();
+  });
+  it('should render form when countries are found', async () =>{
+    const mockDispatch = jest.fn();
+    let initState =
+      [{
+        name:"Mexico"
+      }]
+    let reducer = (state = initState, action) => {
+      if(action.type === 'ADD_ID'){
+        return [...state, {id: action.id, ...action.identity}]
+      }
+      return state
+    }
+    let root = combineReducers(
+      {
+        countries:reducer
+      }
+    )
+    let state = createStore(root,(applyMiddleware(thunk)))
+       render (<Provider store ={state}><IDForm /></Provider>);
+        expect(screen.getByTestId('list-countries')).toBeInTheDocument()
+    });
+});
