@@ -61,7 +61,7 @@ describe('IDForm', () => {
     let state = createStore(root,(applyMiddleware(thunk)))
     render (<Provider store ={state}><IDForm /></Provider>);
     expect(screen.queryAllByTestId('country')).toHaveLength(2)
-  })
+  });
 
   it('should change the value of the input fields', () => {
     const mockDispatch = jest.fn();
@@ -89,5 +89,5 @@ describe('IDForm', () => {
     const firstName = screen.getByTestId('first-name1');
     userEvent.type(firstName, 'Zebadiah')
     expect(firstName).toHaveValue('Zebadiah')
-  })
+  });
 });
