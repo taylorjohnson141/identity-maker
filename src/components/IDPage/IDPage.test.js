@@ -4,91 +4,76 @@ import StoryArea from '../StoryArea/StoryArea'
 import MissionArea from '../MissionArea/MissionArea'
 import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import rootReducer from '../../reducers/index.js'
-// import { shallow } from 'enzyme';
-// import Enzyme from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
 
 describe.only('IDPage', () => {
   beforeEach(() => {
-    const mockIdentity = {
-     color: 'red',
-     company: 'Bic',
-     country: 'Belguim',
-     firstName1: 'John',
-     firstName2: 'Wayne',
-     firstName3: 'Pilgrim',
-     game: 'backgammon',
-     genre1: 'mystery',
-     genre2: 'comedy',
-     lasName: 'Funkstein',
-     numbers1: 2,
-     numbers2: 5,
-     occupation: 'inspector',
-     pluralAnimal: 'zebras',
-     singularAnimal: 'moose',
-     sport: 'rugby',
-     zooAnimal: 'lemur'
-   };
-  })
+    jest.mock('react-redux', () => ({
+      ...jest.requireActual('react-redux'),
+      useSelector: jest.fn()
+      .mockReturnValueOnce(mockIdentityState)
+      .mockReturnValueOnce(mockCountryState)
+    }));
+  });
+
+  afterEach(() => {
+    useSelector.mockClear()
+  });
 
   it('should render loading when there are no countries', () => {
     const store = createStore(rootReducer);
+
     render(
       <Provider store={store}>
         <BrowserRouter>
           <IDPage idNumber='1'/>
         </BrowserRouter>
       </Provider>
-    )
+    );
 
     const loading = screen.getByText('Loading!')
     expect(loading).toBeInTheDocument()
   });
 
-  it('should pass the right props to the StoryArea', () => {
-    const store = createStore(rootReducer)
-    const mockIdentityNumber = '2'
+  it('should fire a useSelector for currentIdentity', () => {
+    const store = createStore(rootReducer);
 
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <IDPage idNumber={mockIdentityNumber}/>
+          <IDPage idNumber='1'/>
         </BrowserRouter>
       </Provider>
-    )
+    );
 
-    const currentCountry = 'Madagascar'
-    console.log(props())
-    expect(props()).toEqual("2")
-  });
+   const mockIdentity = [{
+      color: 'red',
+      company: 'Bic',
+      country: 'Belguim',
+      firstName1: 'John',
+      firstName2: 'Wayne',
+      firstName3: 'Pilgrim',
+      game: 'backgammon',
+      genre1: 'mystery',
+      genre2: 'comedy',
+      lasName: 'Funkstein',
+      numbers1: 2,
+      numbers2: 5,
+      occupation: 'inspector',
+      pluralAnimal: 'zebras',
+      singularAnimal: 'moose',
+      sport: 'rugby',
+      zooAnimal: 'lemur'
+    }];
 
-    // check if IDPage component receives correct props
-    //IDPage does not render anything directly.
-    // Takes props(id) and finds the currentIdentity and currentCountry
-    // uses CI and CC to render StoryArea and MissionArea as props
 
+    //const useSelector = jest.fn().mockImplementation((mockState) => mockIdentity)
+
+    expect(useSelector).toHaveProperty('state.identities', mockIdentity)
+
+    // want to mock out useSelector to see if it gets called 
+  })
 });
-
-// describe('IDPage', () => {
-//   // const mockStore = createStore(reducer, {identity: []});
-//   // const getWrapper = () => mount(
-//   //   <Provider store={mockStore}>
-//   //     <IDPage />
-//   //   </Provider>
-//   // )
-//
-//   it('should render a storyArea', () => {
-//     render(<IDPage />)
-//     const currentIdentity = 'Michael Scarn'
-//     const currentCountry = 'Madagascar'
-//     const wrapper = shallow(
-//       <StoryArea currentIdentity={currentIdentity} currentCountry={currentCountry} />
-//     )
-//
-//     expect(wrapper.prop('currentIdentity')).toEqual(currentIdentity);
-//   });
-// });
