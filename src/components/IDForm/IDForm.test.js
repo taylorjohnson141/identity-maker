@@ -87,7 +87,7 @@ describe('IDForm', () => {
     render (<Provider store ={state}><IDForm /></Provider>);
 
     const firstName = screen.getByTestId('first-name1');
-    firstName.value = 'Zebadiah'
-    userEvent.type(firstName)
+    userEvent.type(firstName, 'Zebadiah')
+    expect(firstName).toHaveValue('Zebadiah')
   })
 });
