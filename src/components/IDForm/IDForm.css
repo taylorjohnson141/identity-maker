@@ -1,0 +1,56 @@
+.id-form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(78, 78, 78);
+  height: 100%;
+  width: 300px;
+  margin-top: 143px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: scroll;
+  padding-top: 20px;
+  color: rgb(0, 255, 65);
+  font-family: 'VT323', monospace;
+  font-size: 1.5em;
+  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.id-form input {
+  border-radius: 18px;
+  text-align: center;
+  background-color: white;
+  color: rgb(4, 83, 24);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.id-form div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+.id-form button {
+  background-color: rgb(0, 255, 65);
+   border: none;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   font-family: 'VT323', monospace;
+   font-size: 1.3em;
+   border-radius: 18px;
+}
+
+.id-form button:hover {background-color: rgb(0, 176, 45)}
+
+.numbers {
+  width: 25px;
+}
