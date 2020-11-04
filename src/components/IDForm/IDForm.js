@@ -25,7 +25,7 @@ const IDForm = () => {
     return <h1>Loading</h1>
   } else {
     countryList = countries.map((country, index) => {
-      return <option value={country.name} key={index} name={country.name} />
+      return <option data-testid="country" value={country.name} key={index} name={country.name} />
     })
   }
 
