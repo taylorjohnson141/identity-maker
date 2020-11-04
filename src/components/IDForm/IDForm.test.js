@@ -63,4 +63,31 @@ describe('IDForm', () => {
     expect(screen.queryAllByTestId('country')).toHaveLength(2)
   })
 
+  it('should change the value of the input fields', () => {
+    const mockDispatch = jest.fn();
+    let initState =
+      [{
+        name:"Mexico"
+      },
+      {
+        name:"Angola"
+      }]
+    let reducer = (state = initState, action) => {
+      if(action.type === 'ADD_ID'){
+        return [...state, {id: action.id, ...action.identity}]
+      }
+      return state
+    }
+    let root = combineReducers(
+      {
+        countries:reducer
+      }
+    )
+    let state = createStore(root,(applyMiddleware(thunk)))
+    render (<Provider store ={state}><IDForm /></Provider>);
+
+    const firstName = screen.getByTestId('first-name1');
+    firstName.value = 'Zebadiah'
+    userEvent.type(firstName)
+  })
 });

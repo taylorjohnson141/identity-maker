@@ -37,6 +37,7 @@ const IDForm = () => {
         Enter Three First Names
         </label>
         <input
+          data-testid="first-name1"
           name="first-name1"
           ref={register({
             required: "Required",
