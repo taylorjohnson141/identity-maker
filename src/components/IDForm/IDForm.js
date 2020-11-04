@@ -25,7 +25,7 @@ const IDForm = () => {
     return <h1>Loading</h1>
   } else {
     countryList = countries.map((country, index) => {
-      return <option value={country.name} key={index} name={country.name} />
+      return <option data-testid="country" value={country.name} key={index} name={country.name} />
     })
   }
 
@@ -37,6 +37,7 @@ const IDForm = () => {
         Enter Three First Names
         </label>
         <input
+          data-testid="first-name1"
           name="first-name1"
           ref={register({
             required: "Required",
@@ -229,6 +230,7 @@ const IDForm = () => {
           required: "Required",
        })}/>
         <datalist
+         data-testid='list-countries'
          id="data"
          name="country"
         >

@@ -14,13 +14,7 @@ describe.only('IDPage', () => {
     jest.mock('react-redux', () => ({
       ...jest.requireActual('react-redux'),
       useSelector: jest.fn()
-      .mockReturnValueOnce(mockIdentityState)
-      .mockReturnValueOnce(mockCountryState)
     }));
-  });
-
-  afterEach(() => {
-    useSelector.mockClear()
   });
 
   it('should render loading when there are no countries', () => {
@@ -74,6 +68,6 @@ describe.only('IDPage', () => {
 
     expect(useSelector).toHaveProperty('state.identities', mockIdentity)
 
-    // want to mock out useSelector to see if it gets called 
+    // want to mock out useSelector to see if it gets called
   })
 });
