@@ -1,6 +1,8 @@
 import "@testing-library/jest-dom";
 import { fetchCountries } from './fetchCountries'
 import { isLoading, hasErrored, setCountries } from '../actions/index.js'
+// jest.mock('../actions/index.js')
+// jest.mock('./fetchCountries')
 
 describe('fetchCountries', () => {
   let mockUrl
@@ -147,14 +149,27 @@ describe('fetchCountries', () => {
   // });
 
   it('should dispatch setCountries with the correct params', async () => {
-    jest.mock('./fetchCountries')
-    const thunk = fetchCountries(mockUrl)
-    const setCountries = jest.fn().mockReturnValueOnce(true)
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'Something went wrong'
+    }))
+    const setCountries = jest.fn().mockImplementation((data) => true )
 
-    mockDispatch = jest.fn().mockImplementation(() => mockSetCountries)
+    let mockDispatch = jest.fn().mockImplementation((fnc) =>  fnc )
+    const fetchCountries = jest.fn().mockImplementation ((url) =>  async (mockDispatch) => {
+        const response = await fetch(url)
+      
+        const data = await response
+        // dispatch(isLoading(false))
+        console.log(setCountries())
+        mockDispatch(setCountries(data))
+      })
+
+    const thunk = fetchCountries(mockUrl)
+
 
     await thunk(mockDispatch)
 
-    expect(mockDispatch).toHaveBeenCalledWith(mockSetCountries)
+    expect(mockDispatch).toHaveBeenCalledWith(setCountries(mockSetCountries))
   });
 });
