@@ -6,6 +6,7 @@ const StoryArea = (props) => {
   return (
     <article className = 'storyArticle'>
       <h1>Your Backstory</h1>
+      <p>
       {`Your name is
       ${currentIdentity['first-name1']}
       ${currentIdentity['last-name']}.
@@ -18,6 +19,7 @@ const StoryArea = (props) => {
       You enjoy ${currentIdentity.genre1} novels and watching ${currentIdentity.genre2} movies.
       You have ${currentIdentity.numbers2} close friends who often call you by your nickname,
       the ${currentIdentity['color-name']} ${currentIdentity['zoo-animal']}`}.
+      </p>
     </article>
   );
 }
