@@ -34,7 +34,7 @@ const IDForm = () => {
     <form className='id-form' name='identity' onSubmit={handleSubmit(onSubmit)}>
       <div className='form-part'>
         <label htmlFor="" className="">
-        Enter Three First Names
+        Enter Two First Names
         </label>
         <input
           data-testid="first-name1"
