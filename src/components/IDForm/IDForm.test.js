@@ -6,7 +6,7 @@ import rootReducer from '../../reducers/index';
 import {useDispatch, useSelector} from 'react-redux'
 import thunk from 'redux-thunk';
 import { Provider,} from 'react-redux';
-import { createStore, applyMiddleware,combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import userEvent from '@testing-library/user-event'
 <<<<<<< HEAD
 
