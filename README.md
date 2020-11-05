@@ -17,11 +17,15 @@ In your terminal:
 
 ## Usage
 
+### User Experience
+![gif](https://media.giphy.com/media/oNt21n9uDmUrp1JE1T/giphy.gif)
+
 #### Homepage (With an Identity Card)
 ![homepage-view](src/Images/homepage.png)
 
 #### Identity Backstory and Mission Area
-<img src="src/images/identityCard.png" alt="stories-screenshot" width="600">
+![stories-view](src/Images/identityCard.png)
+
 
 ## Roadmap
 
