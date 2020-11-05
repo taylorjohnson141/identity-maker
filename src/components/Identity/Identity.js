@@ -10,7 +10,7 @@ const Identity = (prop) => {
       <section className='identity'>
         <img alt = 'spy-pic' src={Silhouette} />
         <div className='last'>
-          <h3 className ='last-name' >LAST NAME</h3>
+          <h3 className ='last-name'>LAST NAME</h3>
           <h2>{identities['last-name']}</h2>
         </div>
         <div className='first'>
