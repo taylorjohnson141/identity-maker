@@ -33,7 +33,7 @@ const IDForm = () => {
 
     <form className='id-form' name='identity' onSubmit={handleSubmit(onSubmit)}>
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label for="first-name1" className="">
         Enter Two First Names
         </label>
         <input
@@ -53,7 +53,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="last-name" className="">
         Enter A Last Name
         </label>
         <input
@@ -66,7 +66,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="company-name" className="">
         Enter A Company Name
         </label>
         <input
@@ -79,7 +79,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="occupation-name" className="">
         Enter An Occupation
         </label>
         <input
@@ -92,7 +92,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="restaurant-name" className="">
         Enter A Restaurant Name
         </label>
         <input
@@ -105,7 +105,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="singular-animal-name" className="">
         Enter A Domestic Animal(singular)
         </label>
         <input
@@ -118,7 +118,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="plural-animal-name" className="">
         Enter A Domestic Animal(plural)
         </label>
         <input
@@ -131,7 +131,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="numbers1" className="">
         Enter Two Numbers Between 1 And 10
         </label>
         <input
@@ -159,7 +159,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="sport-name" className="">
         Enter A Sport
         </label>
         <input
@@ -172,7 +172,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="game-name" className="">
         Enter A Game
         </label>
         <input
@@ -185,12 +185,12 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="game-name" className="">
         Enter Two Genres
         </label>
         <input
           data-testid="genre1"
-          name="genre1"
+          name="game-name"
           ref={register({
             required: "Required",
           })}
@@ -205,7 +205,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="color-name" className="">
         Enter A Color
         </label>
         <input
@@ -218,7 +218,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="">
+        <label htmlFor="zoo-animal" className="">
         Enter An Animal You'd See In A Zoo
         </label>
         <input
@@ -231,7 +231,7 @@ const IDForm = () => {
       </div>
 
       <div className='form-part'>
-        <label htmlFor="" className="country-selection">
+        <label htmlFor="country" className="country-selection">
         Enter A Name Of A Country
         </label>
         <input
