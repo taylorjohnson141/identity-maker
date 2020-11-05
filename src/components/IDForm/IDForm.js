@@ -44,13 +44,8 @@ const IDForm = () => {
           })}
         />
         <input
+          data-testid="first-name2"
           name="first-name2"
-          ref={register({
-            required: "Required",
-          })}
-        />
-        <input
-          name="first-name3"
           ref={register({
             required: "Required",
           })}
@@ -62,6 +57,7 @@ const IDForm = () => {
         Enter A Last Name
         </label>
         <input
+          data-testid="last-name"
           name="last-name"
           ref={register({
             required: "Required",
@@ -74,6 +70,7 @@ const IDForm = () => {
         Enter A Company Name
         </label>
         <input
+          data-testid="company"
           name="company-name"
           ref={register({
             required: "Required",
@@ -86,6 +83,7 @@ const IDForm = () => {
         Enter An Occupation
         </label>
         <input
+          data-testid="occupation"
           name="occupation-name"
           ref={register({
             required: "Required",
@@ -98,6 +96,7 @@ const IDForm = () => {
         Enter A Restaurant Name
         </label>
         <input
+          data-testid="restaurant"
           name="restaurant-name"
           ref={register({
             required: "Required",
@@ -110,6 +109,7 @@ const IDForm = () => {
         Enter A Domestic Animal(singular)
         </label>
         <input
+          data-testid="pet-singular"
           name="singular-animal-name"
           ref={register({
             required: "Required",
@@ -122,6 +122,7 @@ const IDForm = () => {
         Enter A Domestic Animal(plural)
         </label>
         <input
+          data-testid="pet-plural"
           name="plural-animal-name"
           ref={register({
             required: "Required",
@@ -134,6 +135,7 @@ const IDForm = () => {
         Enter Two Numbers Between 1 And 10
         </label>
         <input
+          data-testid="number1"
           className='numbers'
           name="numbers1"
           type='number'
@@ -144,6 +146,7 @@ const IDForm = () => {
           })}
         />
         <input
+          data-testid="number2"
           className='numbers'
           name="numbers2"
           type='number'
@@ -160,6 +163,7 @@ const IDForm = () => {
         Enter A Sport
         </label>
         <input
+          data-testid="sport"
           name="sport-name"
           ref={register({
             required: "Required",
@@ -172,6 +176,7 @@ const IDForm = () => {
         Enter A Game
         </label>
         <input
+          data-testid="game"
           name="game-name"
           ref={register({
             required: "Required",
@@ -184,12 +189,14 @@ const IDForm = () => {
         Enter Two Genres
         </label>
         <input
+          data-testid="genre1"
           name="genre1"
           ref={register({
             required: "Required",
           })}
         />
         <input
+          data-testid="genre2"
           name="genre2"
           ref={register({
             required: "Required",
@@ -202,6 +209,7 @@ const IDForm = () => {
         Enter A Color
         </label>
         <input
+          data-testid="color"
           name="color-name"
           ref={register({
             required: "Required",
@@ -214,6 +222,7 @@ const IDForm = () => {
         Enter An Animal You'd See In A Zoo
         </label>
         <input
+          data-testid="zoo-animal"
           name="zoo-animal"
           ref={register({
             required: "Required",
@@ -225,7 +234,10 @@ const IDForm = () => {
         <label htmlFor="" className="country-selection">
         Enter A Name Of A Country
         </label>
-        <input name="country" list="data"
+        <input
+          data-testid="countries"
+          name="country"
+          list="data"
           ref={register({
           required: "Required",
        })}/>
