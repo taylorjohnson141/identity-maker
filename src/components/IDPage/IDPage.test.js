@@ -1,7 +1,6 @@
 import React from 'react';
 import IDPage from './IDPage';
-import StoryArea from '../StoryArea/StoryArea'
-import MissionArea from '../MissionArea/MissionArea'
+
 import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider, useSelector } from 'react-redux';

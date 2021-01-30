@@ -21,7 +21,6 @@ describe('MissionArea', () => {
   render(<MissionArea currentCountry = {currentCountry}/>)
   let countryArticle = screen.getByText('Operation:الجزائر')
   let img = screen.getByAltText('country flag')
-  screen.debug()
   expect(img).toBeInTheDocument()
   expect(countryArticle).toBeInTheDocument()
 })
