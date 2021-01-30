@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { isLoading, hasErrored, countries } from './setCountriesReducer';
-import { addID } from './addIDReducer.js';
+import { addID } from './addIdReducer.js';
 
 const rootReducer = combineReducers({
   countries,
