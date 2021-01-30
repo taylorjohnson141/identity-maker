@@ -1,11 +1,19 @@
 .article{
+  line-height: 2;
   font-family: 'Orbitron', sans-serif;
   color:#41FF00;
-  background-color: black;
-  margin-top: 10px;
+  background-color: rgba(65, 65, 65, 0.72);
+  margin: 80px;
+  text-align: center;
 }
 .flag-image{
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   width:100px ;
   padding-top: 20px;
+}
+
+h1 {
+margin-bottom: 8px;
 }

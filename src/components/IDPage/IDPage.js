@@ -10,7 +10,7 @@ const IDPage = (props) => {
     return identity.id === parseInt(idNumber)}))
   let currentCountry = useSelector(state => state.countries.find(country => country.name === currentIdentity.country))
  if(!currentCountry && !currentIdentity){
-   return <h1>Loading!</h1>
+   return <h1 className='load'>Loading!</h1>
  }
 
   return (
