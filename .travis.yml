@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "node"
+- node
+deploy:
+  provider: heroku
+  api_key:
+    secure: RTu2RUmNKmfWIzAToVFMtphBoOiHYYt/WLFwpE/OICsUBfnD5Kiyxx0LbWBvxm6hdvBPVZDlOTCCi8h56df9fTh75hMs6OmkXZPUJEym5jxX+Akihm+8Dk5qjiz9CbtAk3W/HIi8MGU8HKNsADC0m5pq9nVbeRlfysy5G0WbkGxU8jmDSi0j35AHd7XVWF1AnmtjLwmWbbGNCl8pLwbpDUihiRNIayPTP2NU12ogjPB4X1G8+gozbr/V29CmBLOQFGpzeSjlA4zwBHKkF1uVp4DVJ1XJXuDH1W9VSNh2DizfzZr1NdwGnbRq9eiQ52zxNsl/ZLZzVEc1VJoe12SLbm7ecR7KfE2qz6D4l9ENGD/bmLzJaAlzSWczXPChg0cjbaTPn2lwnhKj5G0jxVrPlviNZQ7ymkntvRQfyobuheKSa4+ce/gRBulKX2v8E+ksoZupUvwoGKc10/mkQujv+2B6ryBdP13C1eXJZUXk2up91UPXXy6znpyXnPOoir6urefZWGcjH9w4zFmAXEZAO4NOVn4HO1vTVtOjWOZXbBXQ+H5YZbHEXH8q7cDP/v67jvWCEh9uEAEI5zzOjApaPO7O9lGs1jlXMY0APsfr7mFLEGEZV2XiSD1p+Mat4THeA0nreqSmj7ti/CLnPGkcmtgeOLhMe+XTbaUAlAnXgmQ=
+  app: tj-identitymaker
+  skip_cleanup: true
+  on: main
