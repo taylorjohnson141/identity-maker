@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import MissionArea from './MissionArea.js';
 import { render, screen } from '@testing-library/react';
 
-
 describe('MissionArea', () => {
   it('should render correctly', () =>{
 
@@ -21,7 +20,6 @@ describe('MissionArea', () => {
   render(<MissionArea currentCountry = {currentCountry}/>)
   let countryArticle = screen.getByText('Operation:الجزائر')
   let img = screen.getByAltText('country flag')
-  screen.debug()
   expect(img).toBeInTheDocument()
   expect(countryArticle).toBeInTheDocument()
 })

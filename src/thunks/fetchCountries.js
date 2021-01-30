@@ -10,7 +10,6 @@ export const fetchCountries = (url) => {
       }
       const data = await response.json()
       // dispatch(isLoading(false))
-      console.log(setCountries())
       dispatch(setCountries(data))
     } catch (error) {
       dispatch(hasErrored(error.message))

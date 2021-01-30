@@ -1,7 +1,7 @@
 import * as actions from '../actions'
 
 describe('actions', () => {
-  it('should have a type of ADD_ID', () => {
+  it.skip('should have a type of ADD_ID', () => {
     const identity = {
       color: 'red',
       company: 'Bic',

@@ -6,7 +6,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '../../reducers/index.js';
 
-
 describe('IDArea', () => {
   it('should render the identity card area with a message asking the user to make an ID if they have not', () => {
     const store = createStore(rootReducer);
