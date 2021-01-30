@@ -1,14 +1,13 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import IDForm from './IDForm.js';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, } from '@testing-library/react';
 import rootReducer from '../../reducers/index';
-import {useDispatch, useSelector} from 'react-redux'
 import thunk from 'redux-thunk';
 import { Provider,} from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import userEvent from '@testing-library/user-event'
-
+//
 describe('IDForm', () => {
   it('should render loading on first render', () => {
     const store = createStore(rootReducer, (applyMiddleware(thunk)))

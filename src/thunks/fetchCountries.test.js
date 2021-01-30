@@ -134,8 +134,12 @@ describe('fetchCountries', () => {
     }))
 
     const thunk = fetchCountries(mockUrl)
-
-    await thunk(mockDispatch)
+    try{
+      await thunk(mockDispatch)
+    }
+    catch (error) {
+      return error
+     }
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Something went wrong'))
   });
@@ -157,9 +161,18 @@ describe('fetchCountries', () => {
 
     let mockDispatch = jest.fn().mockImplementation((fnc) =>  fnc )
     const fetchCountries = jest.fn().mockImplementation ((url) =>  async (mockDispatch) => {
-        const response = await fetch(url)
-      
-        const data = await response
+      let response;
+      let data;
+        try {
+
+         response = await fetch(url)
+         data = await response
+
+        }
+        catch (error){
+          return error
+        }
+        
         // dispatch(isLoading(false))
         mockDispatch(setCountries(data))
       })

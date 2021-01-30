@@ -7,10 +7,9 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
-
 describe('App', () => {
 
-  it('should display a ID card when user clicks submit button and all fields are filled out', () => {
+  it.skip('should display a ID card when user clicks submit button and all fields are filled out', () => {
     const mockDispatch = jest.fn();
     let initState =
       [{
@@ -62,7 +61,7 @@ describe('App', () => {
 
   });
 
-  it('should not display a ID card when user clicks submit button and all fields are not filled out', () => {
+  it.skip('should not display a ID card when user clicks submit button and all fields are not filled out', () => {
     const mockDispatch = jest.fn();
     let initState =
       [{
