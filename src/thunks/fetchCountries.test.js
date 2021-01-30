@@ -161,7 +161,6 @@ describe('fetchCountries', () => {
       
         const data = await response
         // dispatch(isLoading(false))
-        console.log(setCountries())
         mockDispatch(setCountries(data))
       })
 

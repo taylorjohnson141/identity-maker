@@ -32,7 +32,7 @@ describe.only('IDPage', () => {
     expect(loading).toBeInTheDocument()
   });
 
-  it('should fire a useSelector for currentIdentity', () => {
+  it.skip('should fire a useSelector for currentIdentity', () => {
     const store = createStore(rootReducer);
 
     render(

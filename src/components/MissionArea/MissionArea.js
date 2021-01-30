@@ -3,7 +3,6 @@ import './MissionArea.css';
 
 const MissionArea = (props) => {
   let {currentCountry} = props
-  console.log(currentCountry)
   let takeOver;
   let languages;
   if(!currentCountry.regionalBlocs[0]){

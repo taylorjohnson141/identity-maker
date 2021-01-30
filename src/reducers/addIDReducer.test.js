@@ -1,4 +1,4 @@
-import {addID} from './addIDReducer'
+import {addID} from './addIDReducer.js'
 import expect from 'expect'
 
 describe('addID', () =>{

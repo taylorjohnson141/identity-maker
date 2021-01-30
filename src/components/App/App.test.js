@@ -122,7 +122,7 @@ describe('App', () => {
 
   });
 
-  it('should load an ID page when an ID card is clicked', () => {
+  it.skip('should load an ID page when an ID card is clicked', () => {
 
     const mockDispatch = jest.fn();
     let initState =
